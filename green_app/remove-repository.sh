@@ -1,0 +1,1 @@
+docker rmi uda-capstone-green-app johnwich98/uda-capstone-green-app
