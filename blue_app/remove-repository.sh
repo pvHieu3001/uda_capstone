@@ -1,1 +1,1 @@
-docker rmi uda-capstone-blue-app johnwich98/uda-capstone-blue-app
+docker rmi uda-capstone-blue-app johnwick98/uda-capstone-blue-app
