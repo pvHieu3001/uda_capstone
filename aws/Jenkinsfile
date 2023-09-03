@@ -7,9 +7,9 @@ pipeline {
 				withAWS(region:'us-east-1', credentials:'aws_credentials') {
 					sh '''
 						eksctl create cluster \
-						--name udacitycluster \
+						--name udacluster \
 						--version 1.27 \
-						--nodegroup-name standard-workers \
+						--nodegroup-name uda-workers \
 						--node-type t2.micro \
 						--nodes 2 \
 						--nodes-min 1 \
@@ -27,7 +27,7 @@ pipeline {
 			steps {
 				withAWS(region:'us-east-1', credentials:'aws_credentials') {
 					sh '''
-						aws eks --region us-east-1 update-kubeconfig --name udacitycluster
+						aws eks --region us-east-1 update-kubeconfig --name udacluster
 					'''
 				}
 			}

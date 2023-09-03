@@ -56,7 +56,7 @@ This file contains the steps of CICD pipeline of application.
 -   Create Jenkins server using cloud formation template.
 
 ```
-$ sh scripts/create.sh
+$ sh ./create_aws_vpc.sh
 ```
 
 -   Following resources are created after executing above command:
