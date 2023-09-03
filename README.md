@@ -14,7 +14,7 @@ In this project I have implemented all the knowledge that I have learnt from the
 
 ## Project Files
 
-#### infrastructure
+#### aws
 
 This folder all the files related to infrastructure deployment.
 
@@ -34,10 +34,6 @@ This folder contains all template files for Kubernetes resources.
 #### screenshots
 
 This folder contains all screenshots taken during creation of this project.
-
-#### scripts
-
-This folder contains script to create, delete and update CloudFormation stack.
 
 #### Dockerfile
 
@@ -83,7 +79,7 @@ $ sh ./create_aws_vpc.sh
     -   [Blue Ocean](https://plugins.jenkins.io/blueocean/)
 -   Add AWS credentials in Jenkins.
 -   Create new item in Jenkins of type `Pipeline` of name let's say `uda-pipeline`
--   In the configuration page of `uda-pipeline`, provide the GitHub repository as `https://github.com/sourabhgupta385/udacity-cloud-devops-capstone-project` and script path as `aws/Jenkinsfile`
+-   In the configuration page of `uda-pipeline`, provide the GitHub repository as `https://github.com/pvHieu3001/uda_capstone` and script path as `aws/Jenkinsfile`
 -   Apply and save the pipeline.
 -   Click on `Build Now` to trigger the pipeline.
 -   `infra-pipeline` does the following steps:
