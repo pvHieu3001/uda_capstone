@@ -12,16 +12,16 @@ pipeline {
 
 		stage("Change Permissions") {
 			steps {
-				sh '
+				sh '''
 					cd ./blue-app
 					chmod +x ./build-image.sh
 					chmod +x ./remove-image.sh
-				'
-				sh '
+				'''
+				sh '''
 					cd ./green-app
 					chmod +x ./build-image.sh
 					chmod +x ./remove-image.sh
-				'
+				'''
 			}
 		}
 
@@ -30,21 +30,21 @@ pipeline {
 				stage("Build Blue Image") {
 					steps {
 						sh 'echo " ---- Building Blue Image --- "'
-						sh '
+						sh '''
 							echo $BUILD_ID
 							cd ./blue-app
 							./build-image.sh
-						'					
+						'''					
 					}
 				}
 				stage("Build Green Image") {
 					steps {	
 						sh 'echo " ---- Building Green Image --- "'
-						sh '
+						sh '''
 							echo $BUILD_ID
 							cd ./green-app
 							./build-image.sh
-						'
+						'''
 					}
 				}
 			}
@@ -61,10 +61,10 @@ pipeline {
 				stage("Remove Green Image") {
 					steps {
 						sh 'echo " ---- Removing Green Image --- "'
-						sh '
+						sh '''
 							cd ./green-app
 							./remove-image.sh
-						'
+						'''
 					}
 				}
 			}
@@ -131,7 +131,7 @@ pipeline {
 				}
 			}
 		}
-		
+
 		stage("Green Application") {
 			steps {
 				withAWS(region:'us-east-1',credentials:'aws_credentials') {
