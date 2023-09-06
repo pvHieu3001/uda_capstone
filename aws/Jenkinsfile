@@ -29,7 +29,8 @@ pipeline {
 			parallel {
 				stage("Build Blue Image") {
 					steps {
-						sh 'echo " ---- Building Blue Image --- "'
+						sh 'echo " ---- Building and push to dockerhub Blue Image --- "'
+						sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
 						sh '''
 							echo $BUILD_ID
 							cd ./blue-app
@@ -39,7 +40,8 @@ pipeline {
 				}
 				stage("Build Green Image") {
 					steps {	
-						sh 'echo " ---- Building Green Image --- "'
+						sh 'echo " ---- Building and push to dockerhub Green Image --- "'
+						sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
 						sh '''
 							echo $BUILD_ID
 							cd ./green-app
@@ -61,10 +63,7 @@ pipeline {
 				stage("Remove Green Image") {
 					steps {
 						sh 'echo " ---- Removing Green Image --- "'
-						sh '''
-							cd ./green-app
-							./remove-image.sh
-						'''
+						sh 'cd ./green-app/remove-image.sh'
 					}
 				}
 			}
