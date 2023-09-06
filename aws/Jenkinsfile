@@ -13,12 +13,12 @@ pipeline {
 		stage("Change Permissions") {
 			steps {
 				sh '''
-					cd ./blue-app
+					cd ./blue_app
 					chmod +x ./build-image.sh
 					chmod +x ./remove-image.sh
 				'''
 				sh '''
-					cd ./green-app
+					cd ./green_app
 					chmod +x ./build-image.sh
 					chmod +x ./remove-image.sh
 				'''
@@ -33,7 +33,7 @@ pipeline {
 						sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
 						sh '''
 							echo $BUILD_ID
-							cd ./blue-app
+							cd ./blue_app
 							./build-image.sh
 						'''					
 					}
@@ -44,7 +44,7 @@ pipeline {
 						sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
 						sh '''
 							echo $BUILD_ID
-							cd ./green-app
+							cd ./green_app
 							./build-image.sh
 						'''
 					}
@@ -57,13 +57,13 @@ pipeline {
 				stage("Remove Blue Image") {
 					steps {
 						sh 'echo " ---- Removing Blue Image --- "'
-						sh './blue-app/remove-image.sh'
+						sh './blue_app/remove-image.sh'
 					}
 				}
 				stage("Remove Green Image") {
 					steps {
 						sh 'echo " ---- Removing Green Image --- "'
-						sh 'cd ./green-app/remove-image.sh'
+						sh 'cd ./green_app/remove-image.sh'
 					}
 				}
 			}
