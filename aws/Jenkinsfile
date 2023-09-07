@@ -61,7 +61,7 @@ pipeline {
 				stage("Remove Green Image") {
 					steps {
 						sh 'echo " ---- Removing Green Image --- "'
-						sh 'cd ./green_app/remove-image.sh'
+						sh './green_app/remove-image.sh'
 					}
 				}
 			}
