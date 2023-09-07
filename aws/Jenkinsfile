@@ -88,14 +88,14 @@ pipeline {
 				stage("Deploy Blue Application Container") {
 					steps {
 						withAWS(region:'us-east-1',credentials:'aws_credentials') {
-							sh 'kubectl apply -f kubernetes/blue-controller.yaml'
+							sh 'kubectl apply -f ./kubernetes/blue-controller.yaml'
 						}
 					}
 				}
 				stage("Deploy Green Application Container") {
 					steps {
 						withAWS(region:'us-east-1',credentials:'aws_credentials') {
-							sh 'kubectl apply -f kubernetes/green-controller.yaml'
+							sh 'kubectl apply -f ./kubernetes/green-controller.yaml'
 						}
 					}
 				}
@@ -105,7 +105,7 @@ pipeline {
 		stage("Run Blue Application") {
 			steps {
 				withAWS(region:'us-east-1',credentials:'aws_credentials') {
-					sh 'kubectl apply -f kubernetes/blue-service.yaml'
+					sh 'kubectl apply -f ./kubernetes/blue-service.yaml'
 				}
 			}
 		}
@@ -124,7 +124,7 @@ pipeline {
 		stage("Switch to Green Application") {
 			steps {
 				withAWS(region:'us-east-1',credentials:'aws_credentials') {
-					sh 'kubectl apply -f green-app/green-service.yaml'
+					sh 'kubectl apply -f ./green_app/green-service.yaml'
 				}
 			}
 		}
