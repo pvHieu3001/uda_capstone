@@ -17,5 +17,4 @@ spec:
       - name: blue
         image: johnwick98/uda_capstone_blue_app
         ports:
-        - name: http-server
         - containerPort: 80

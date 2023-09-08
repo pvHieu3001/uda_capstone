@@ -17,5 +17,4 @@ spec:
       - name: green
         image: johnwick98/uda_capstone_green_app
         ports:
-        - name: http-server
         - containerPort: 80
