@@ -14,8 +14,8 @@ spec:
         app: blue
     spec:
       containers:
-        - name: blue
-          image: johnwick98/uda_capstone_blue_app
-          ports:
-            - name: http-server
-            containerPort: 80
+      - name: blue
+        image: johnwick98/uda_capstone_blue_app
+        ports:
+        - name: http-server
+        - containerPort: 80
