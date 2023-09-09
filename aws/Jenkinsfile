@@ -23,6 +23,13 @@ pipeline {
 					chmod +x ./build-image.sh
 					chmod +x ./remove-image.sh
 				'''
+				sh '''
+					cd ./kubernetes
+					chmod +x ./blue-controller.yml
+					chmod +x ./blue-service.yml
+					chmod +x ./green-controller.yml
+					chmod +x ./green-service.yml
+				'''
 			}
 		}
 
