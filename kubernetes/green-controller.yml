@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: green
-        image: johnwick98/uda_capstone_green_app
+        image: johnwick98/uda-capstone-green-app
         ports:
         - containerPort: 80
         env:
