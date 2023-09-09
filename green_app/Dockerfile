@@ -1,9 +1,5 @@
-FROM nginx:stable
+FROM nginx:alpine
 
-LABEL MAINTAINER="pvHieu" 
+RUN rm /usr/share/nginx/html/index.html
 
-WORKDIR /var/share/nginx/html
-
-COPY index.html ./index.html
-
-EXPOSE 80
+COPY index.html /usr/share/nginx/html
