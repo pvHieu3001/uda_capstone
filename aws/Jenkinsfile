@@ -71,7 +71,7 @@ pipeline {
 		stage('Create Kubernetes Cluster') {
 			steps {
 				withAWS(region:'us-east-1', credentials:'aws_credentials') {
-					sh 'eksctl create cluster --name uda-cluster --version 1.27 --region us-east-1 --nodegroup-name uda-worker --node-type t3.micro --nodes 2 --nodes-min 1 --nodes-max 3 --managed'
+					sh 'eksctl create cluster --name uda-cluster --version 1.26 --region us-east-1 --nodegroup-name uda-worker --node-type t3.micro --nodes 2 --nodes-min 1 --nodes-max 3 --managed'
 				}
 			}
 		}
