@@ -1,13 +1,14 @@
 kind: Service
 apiVersion: v1
 metadata:
-    name: servicelb
+    name: servicegreenlb
     labels:
-        app: servicelb
+        app: servicegreenlb
 spec:
     ports:
         - port: 8000
           targetPort: 80
     selector:
         app: green
+        version: v1.0.0
     type: LoadBalancer

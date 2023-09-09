@@ -12,9 +12,13 @@ spec:
     metadata:
       labels:
         app: blue
+        version: v1.0.0
     spec:
       containers:
       - name: blue
         image: johnwick98/uda_capstone_blue_app
         ports:
         - containerPort: 80
+        env:
+        - name: VERSION
+          value: v1.0.0
