@@ -124,7 +124,7 @@ pipeline {
 		stage("Switch to Green Application") {
 			steps {
 				withAWS(region:'us-east-1',credentials:'aws_credentials') {
-					sh 'kubectl apply -f kubernetes/green-service.yaml'
+					sh 'kubectl apply -f kubernetes/green-service.yml'
 				}
 			}
 		}
