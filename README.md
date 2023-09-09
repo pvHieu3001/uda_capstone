@@ -88,7 +88,7 @@ $ sh ./create_aws_vpc.sh
     -   Note: This pipeline will take around 15-20 minutes to complete.
 -   Add Docker Hub credentials in Jenkins so that we can push docker image to Docker Hub.
 -   Create new item in Jenkins of type `Pipeline` of name let's say `udacity-capstone-website-pipeline`
--   In the configuration page of `udacity-capstone-website-pipeline`, provide the GitHub repository as `https://github.com/sourabhgupta385/udacity-cloud-devops-capstone-project` and script path as `Jenkinsfile`
+-   In the configuration page of `udacity-capstone-website-pipeline`, provide the GitHub repository as `https://github.com/pvHieu3001/uda_capstone` and script path as `Jenkinsfile`
 -   Apply and save the pipeline.
 -   Click on `Build Now` to trigger the pipeline
 -   Once the pipeline passes with stage name `Create Service Pointing to Blue Replication Controller`, go to Load Balancer page in AWS console and look for DNS name
